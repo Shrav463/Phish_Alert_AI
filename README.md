@@ -56,3 +56,19 @@ Everything happens in under 2 seconds. You don’t click any extra button.
 ---
 
 ## Project structure
+PhishAlertAI/
+├── backend/
+│ ├── main.py # FastAPI server
+│ ├── train_model.py # ML training script
+│ ├── requirements.txt
+│ ├── model/ # Trained .joblib files
+│ └── data/ # Dataset (emails.csv)
+│
+└── extension/
+├── manifest.json # Extension config
+├── content.js # Injected into Gmail, UI
+├── background.js # API calls, cache, notifications
+├── popup.html # Popup manual scan
+├── popup.js
+└── icons/ # Extension icons
+
