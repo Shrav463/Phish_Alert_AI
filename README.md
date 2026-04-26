@@ -4,8 +4,6 @@ A Chrome extension that automatically scans emails when you open them in Gmail a
 if they are phishing, internship scams, visa fraud, or fake job offers. No copy‑pasting needed – the
 banner appears right inside Gmail the moment you open a suspicious email.
 
-![demo](screenshots/demo.png)  *Replace with an actual screenshot if you have one*
-
 ---
 
 ## What problem does this solve?
