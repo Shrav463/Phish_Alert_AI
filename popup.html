@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Gmail Scam Detector</title>
+    <style>
+      body {
+        background: #ffffff;
+        color: #202124;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        width: 340px;
+      }
+
+      main {
+        padding: 14px;
+      }
+
+      h1 {
+        font-size: 16px;
+        margin: 0 0 8px;
+      }
+
+      .status {
+        align-items: center;
+        display: flex;
+        font-size: 13px;
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+
+      .dot {
+        background: #188038;
+        border-radius: 50%;
+        height: 10px;
+        width: 10px;
+      }
+
+      label {
+        display: block;
+        font-size: 12px;
+        font-weight: 700;
+        margin: 10px 0 4px;
+      }
+
+      input,
+      select,
+      textarea {
+        border: 1px solid #dadce0;
+        border-radius: 6px;
+        box-sizing: border-box;
+        font: inherit;
+        padding: 8px;
+        width: 100%;
+      }
+
+      textarea {
+        min-height: 110px;
+        resize: vertical;
+      }
+
+      button {
+        background: #b71c1c;
+        border: 0;
+        border-radius: 6px;
+        color: #fff;
+        cursor: pointer;
+        font-weight: 700;
+        margin-top: 10px;
+        padding: 9px 10px;
+        width: 100%;
+      }
+
+      button:disabled {
+        cursor: default;
+        opacity: 0.65;
+      }
+
+      .result {
+        border-top: 1px solid #eee;
+        font-size: 13px;
+        margin-top: 12px;
+        padding-top: 10px;
+      }
+
+      .score {
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Gmail Scam Detector</h1>
+      <div class="status"><span class="dot"></span><span>Protection active</span></div>
+
+      <label for="apiBaseUrl">API URL</label>
+      <input id="apiBaseUrl" placeholder="https://your-app.onrender.com">
+
+      <label for="aiProvider">AI provider</label>
+      <select id="aiProvider">
+        <option value="auto">Auto</option>
+        <option value="gemini">Gemini</option>
+        <option value="groq">Groq</option>
+        <option value="xai">xAI/Grok</option>
+      </select>
+
+      <button id="saveSettingsButton" type="button">Save settings</button>
+
+      <label for="manualText">Manual scan</label>
+      <textarea id="manualText" placeholder="Paste an email subject, sender, and body here"></textarea>
+
+      <button id="scanButton">Scan pasted text</button>
+      <div id="result" class="result" hidden></div>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

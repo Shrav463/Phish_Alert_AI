@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Gmail Scam Detector",
+  "version": "0.1.0",
+  "description": "Scans opened Gmail messages for internship, visa, and phishing scams.",
+  "permissions": [
+    "notifications",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://mail.google.com/*",
+    "http://localhost:8000/*",
+    "http://localhost:8001/*",
+    "http://127.0.0.1:8000/*",
+    "http://127.0.0.1:8001/*",
+    "https://*.onrender.com/*"
+  ],
+  "action": {
+    "default_title": "Gmail Scam Detector",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mail.google.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
